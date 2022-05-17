@@ -5,7 +5,7 @@ body {
     margin: 0;
     overflow-x: hidden;
 
-    --bk-color: rgb(30, 30, 30);
+    --bk-color: rgb(0, 0, 0);
 }
 
 .center-hor {
@@ -26,19 +26,12 @@ body {
 }
 
 .wrapper.first-impressions {
-    background-image: url("../images/sky.jpg");
-    backdrop-filter: brightness(50%);
-    background-attachment: fixed;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-
     height: 118vh;
 }
 .first-impressions .text-wrap {
     width: 50%;
     height: 50px;
-    transform: translate(-50%, -150%);
+    transform: translate(-50%, -50%);
 }
 .first-impressions h1 {
     font-family: 'Kumar One', cursive;
@@ -58,7 +51,7 @@ body {
     font-size: calc(3vw + 15px);
     overflow-x: visible;
 
-    background: -webkit-linear-gradient(180deg, #de7ee0 0%, #ff93a0 100%);
+    background: white;
     color: var(--bk-color);
     background-clip: text;
     -webkit-background-clip: text;
@@ -67,8 +60,7 @@ body {
 
 .divider {
     position: absolute;
-    transform: rotate(180deg);
-    top: calc(100% + 40px);
+    transform: translateY(-100%) rotate(180deg);
     width: 100%;
     overflow: hidden;
     z-index: 1;
@@ -89,15 +81,16 @@ body {
     left: 20px;
     z-index: 1;
 
-    width: 20px;
-    height: 115%;
+    width: 40px;
+    height: 130%;
 
     background-repeat: repeat-y;
     background-image: url("../images/arrow.png");
-    background-size: 20px;
+    background-size: 40px;
     border: none;
 
-    animation: 0.5s linear 0s infinite conveyor-move;
+    opacity: 1;
+    animation: 1s linear 0s infinite conveyor-move;
 }
 .darker {
     color: rgb(143, 143, 143);
@@ -111,7 +104,7 @@ img.darker {
     width: calc(150px + 10vw);
     height: calc(150px + 10vw);
     background-color: black;
-    outline: 5px solid white;
+    outline: 5px solid rgb(0, 0, 0);
     transform: translate(-50%, -50%) rotate(45deg);
     z-index: -1;
     user-select: none;
@@ -123,14 +116,14 @@ img.darker {
 
 
 @keyframes conveyor-move {
-    from { top: -20px }
+    from { top: -40px }
     to { top: 0px };
 }
 @keyframes rhombus-pulse {
     0% {
         width: calc(150px + 10vw);
         height: calc(150px + 10vw);
-        outline-color: white;
+        outline-color: rgb(0, 0, 0);
         background-color: transparent;
     }
     80% {
