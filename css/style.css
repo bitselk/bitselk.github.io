@@ -1,8 +1,11 @@
 body {
     background-color: white !important;
-    height: 500vh;
-    width: 100vw;
+    color: white;
+    height: auto;
+    margin: 0;
     overflow-x: hidden;
+
+    --bk-color: rgb(30, 30, 30);
 }
 
 .center-hor {
@@ -18,40 +21,93 @@ body {
 }
 
 .wrapper {
-    width: 100%;
-    height: 100%;
+    width: auto;
+    height: 100vh;
 }
 
 .wrapper.first-impressions {
-    background-color: rgb(30, 4, 34);
-    height: 100vh;
-    width: 100vw;
-    overflow-y: scroll;
+    background-image: url("../images/sky.jpg");
+    backdrop-filter: brightness(50%);
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    height: 118vh;
 }
 .first-impressions .text-wrap {
     width: 50%;
     height: 50px;
+    transform: translate(-50%, -150%);
 }
 .first-impressions h1 {
     font-family: 'Kumar One', cursive;
     font-size: calc(35px + 1vw);
     color: white;
-    line-height: 150%;
+    line-height: 0%;
     text-align: center;
     user-select: none;
 }
-.first-impressions h1 .darker {
-    color: rgb(143, 143, 143);
+
+.who-i-am {
+    background-color: var(--bk-color);
+    position: relative;
 }
-.first-impressions img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    user-select: none;
+.who-i-am .title {
+    font-family: 'Arvo', serif;
+    font-size: calc(3vw + 15px);
+    overflow-x: visible;
+
+    background: -webkit-linear-gradient(180deg, #de7ee0 0%, #ff93a0 100%);
+    color: var(--bk-color);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-stroke: 3px transparent;
 }
 
+.divider {
+    position: absolute;
+    transform: rotate(180deg);
+    top: calc(100% + 40px);
+    width: 100%;
+    overflow: hidden;
+    z-index: 1;
+}
+.divider svg {
+    position: relative;
+    display: block;
+    width: calc(119% + 1.3px);
+    height: 64px;
+}
+.divider path {
+    fill: var(--bk-color);
+}
+
+.conveyor {
+    position: absolute;
+    top: -20px;
+    left: 20px;
+    z-index: 1;
+
+    width: 20px;
+    height: 115%;
+
+    background-repeat: repeat-y;
+    background-image: url("../images/arrow.png");
+    background-size: 20px;
+    border: none;
+
+    animation: 0.5s linear 0s infinite conveyor-move;
+}
+.darker {
+    color: rgb(143, 143, 143);
+}
+img.darker {
+    filter: brightness(50%);
+}
 .rhombus {
     position: absolute;
+
     width: calc(150px + 10vw);
     height: calc(150px + 10vw);
     background-color: black;
@@ -64,6 +120,12 @@ body {
     animation: rhombus-pulse 2s linear 0s infinite;
 }
 
+
+
+@keyframes conveyor-move {
+    from { top: -20px }
+    to { top: 0px };
+}
 @keyframes rhombus-pulse {
     0% {
         width: calc(150px + 10vw);
@@ -82,5 +144,11 @@ body {
         height: calc(200px + 11vw);
         outline-color: transparent;
         background-color: transparent;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .conveyor {
+        display: none;
     }
 }
