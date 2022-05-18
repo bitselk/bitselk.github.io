@@ -6,7 +6,9 @@ body {
     overflow-x: hidden;
 
     --bk-color: rgb(0, 0, 0);
-    --frnt-color: rgb(255, 255, 255);
+    --frnt-color: rgb(232, 217, 192);
+    --highlight-color: #FA905D;
+    --dark-highlight-color: #3D141C;
 }
 
 .center-hor {
@@ -20,10 +22,23 @@ body {
     top: 50%;
     transform: translate(-50%, -50%);
 }
+.floral {
+    position: absolute;
+}
+#floral-rhombus {
+    height: calc(20vw + 280px);
+    z-index: 1;
+}
+#floral-waterfall {
+    width: calc(4vw + 65px);
+    z-index: 2;
+    transform: translate(50%, -47%);
+}
 
 .wrapper {
     width: auto;
     height: 100vh;
+    z-index: 2;
 }
 
 .wrapper.first-impressions {
@@ -54,18 +69,26 @@ body {
     overflow-x: visible;
     top: calc(60px - 5vw);
 
-    background: var(--frnt-color);
+    background: white;
     color: var(--bk-color);
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-stroke: 3px transparent;
+}
+.who-i-am .title span {
+    background: -webkit-linear-gradient(rgba(250,144,93,1), rgba(218,84,111,1));
+    color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -webkit-text-stroke: 0px white;
 }
 
 .divider {
     position: absolute;
     width: 100%;
     overflow: hidden;
-    z-index: 1;
+    z-index: 2;
 }
 .divider.flip {
     transform: translateY(-100%) rotate(180deg);
@@ -89,7 +112,7 @@ body {
     margin-top: 40px;
     width: 60vw;
     height: 120px;
-    background-color: var(--frnt-color);
+    background-color: rgb(234, 234, 234);
 
     line-height: 120px;
     color: var(--bk-color);
@@ -136,13 +159,22 @@ img.darker {
     width: calc(150px + 10vw);
     height: calc(150px + 10vw);
     background-color: var(--bk-color);
-    outline: 5px solid var(--bk-color);
     transform: translate(-50%, -50%) rotate(45deg);
     z-index: -1;
     user-select: none;
+
+    background-image: 
+        linear-gradient(0deg, rgba(250,144,93,1) 0%, rgba(218,84,111,1) 100%),
+        linear-gradient(0deg, rgba(250,144,93,1) 0%, rgba(218,84,111,1) 100%);
+    background-size: 7px 100%;
+    background-position:0 0, 100% 0;
+    background-repeat:no-repeat;
 }
 .rhombus.animator {
     animation: rhombus-pulse 2s linear 0s infinite;
+
+    outline: 5px solid var(--dark-highlight-color);
+    background-image: none;
 }
 
 
@@ -151,11 +183,15 @@ img.darker {
     from { top: -40px }
     to { top: 0px };
 }
+@keyframes conveyor-after-move {
+    from { top: 0px }
+    to { top: -70px };
+}
 @keyframes rhombus-pulse {
     0% {
-        width: calc(150px + 10vw);
-        height: calc(150px + 10vw);
-        outline-color: var(--bk-color);
+        width: calc(140px + 10vw);
+        height: calc(140px + 10vw);
+        outline-color: var(--dark-highlight-color);
         background-color: transparent;
     }
     80% {
