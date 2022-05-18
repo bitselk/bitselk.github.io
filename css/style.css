@@ -1,11 +1,12 @@
 body {
-    background-color: white !important;
+    background-color: var(--frnt-color) !important;
     color: white;
     height: auto;
     margin: 0;
     overflow-x: hidden;
 
     --bk-color: rgb(0, 0, 0);
+    --frnt-color: rgb(255, 255, 255);
 }
 
 .center-hor {
@@ -53,7 +54,7 @@ body {
     overflow-x: visible;
     top: calc(60px - 5vw);
 
-    background: white;
+    background: var(--frnt-color);
     color: var(--bk-color);
     background-clip: text;
     -webkit-background-clip: text;
@@ -88,10 +89,10 @@ body {
     margin-top: 40px;
     width: 60vw;
     height: 120px;
-    background-color: white;
+    background-color: var(--frnt-color);
 
     line-height: 120px;
-    color: black;
+    color: var(--bk-color);
     padding-left: 40px;
     padding-right: 40px;
 
@@ -110,7 +111,7 @@ body {
     position: absolute;
     top: -20px;
     left: 20px;
-    z-index: 1;
+    z-index: 0;
 
     width: 40px;
     height: 130%;
@@ -134,8 +135,8 @@ img.darker {
 
     width: calc(150px + 10vw);
     height: calc(150px + 10vw);
-    background-color: black;
-    outline: 5px solid rgb(0, 0, 0);
+    background-color: var(--bk-color);
+    outline: 5px solid var(--bk-color);
     transform: translate(-50%, -50%) rotate(45deg);
     z-index: -1;
     user-select: none;
@@ -154,7 +155,7 @@ img.darker {
     0% {
         width: calc(150px + 10vw);
         height: calc(150px + 10vw);
-        outline-color: rgb(0, 0, 0);
+        outline-color: var(--bk-color);
         background-color: transparent;
     }
     80% {
