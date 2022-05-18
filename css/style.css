@@ -45,11 +45,13 @@ body {
 .who-i-am {
     background-color: var(--bk-color);
     position: relative;
+    height: 700px;
 }
 .who-i-am .title {
     font-family: 'Arvo', serif;
     font-size: calc(3vw + 15px);
     overflow-x: visible;
+    top: calc(60px - 5vw);
 
     background: white;
     color: var(--bk-color);
@@ -60,10 +62,12 @@ body {
 
 .divider {
     position: absolute;
-    transform: translateY(-100%) rotate(180deg);
     width: 100%;
     overflow: hidden;
     z-index: 1;
+}
+.divider.flip {
+    transform: translateY(-100%) rotate(180deg);
 }
 .divider svg {
     position: relative;
@@ -74,6 +78,33 @@ body {
 .divider path {
     fill: var(--bk-color);
 }
+
+.tabs {
+    position: absolute;
+    top: 120px;
+}
+.tab-right, .tab-left {
+    position: relative;
+    margin-top: 40px;
+    width: 60vw;
+    height: 120px;
+    background-color: white;
+
+    line-height: 120px;
+    color: black;
+    padding-left: 40px;
+    padding-right: 40px;
+
+    font-size: calc(1vw + 20px);
+    font-family: 'Arvo', serif;
+    font-weight: 800;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    display: block;
+    white-space: nowrap;
+}
+.tab-left { float: left; text-align: right; border-top-right-radius: 10px; border-bottom-right-radius: 10px; }
+.tab-right { float: right; text-align: left; border-top-left-radius: 10px; border-bottom-left-radius: 10px; }
 
 .conveyor {
     position: absolute;
