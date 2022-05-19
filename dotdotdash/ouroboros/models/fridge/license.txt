@@ -1,0 +1,11 @@
+Model Information:
+* title:	Fridge(Silent Hill)
+* source:	https://sketchfab.com/3d-models/fridgesilent-hill-8958d5065ce94a54b12d03568a0b45e7
+* author:	Zian (https://sketchfab.com/zian_0912)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Fridge(Silent Hill)" (https://sketchfab.com/3d-models/fridgesilent-hill-8958d5065ce94a54b12d03568a0b45e7) by Zian (https://sketchfab.com/zian_0912) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

@@ -1,5 +1,5 @@
 let obfuscated = document.querySelectorAll(".obfuscated");
-var possible = "!@#$%^&*()_=-`~";
+var possible = "!@#$%^&*()_=- `~";
 
 function randText(length) {
     var text = "";
