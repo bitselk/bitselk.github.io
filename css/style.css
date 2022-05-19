@@ -32,7 +32,10 @@ body {
 #floral-waterfall {
     width: calc(4vw + 65px);
     z-index: 2;
-    transform: translate(50%, -47%);
+    transform: translate(50%, -53%);
+
+    -webkit-mask-image: -webkit-gradient(linear, center top, center bottom, 
+    from(rgba(0,0,0,1)), to(rgba(0,0,0,0)));
 }
 
 .wrapper {
@@ -58,17 +61,20 @@ body {
     user-select: none;
 }
 
-.who-i-am {
-    background-color: var(--bk-color);
-    position: relative;
-    height: 700px;
-}
-.who-i-am .title {
+.title {
     font-family: 'Arvo', serif;
     font-size: calc(3vw + 15px);
     overflow-x: visible;
     top: calc(60px - 5vw);
+    position: absolute;
+}
 
+.who-i-am {
+    background-color: var(--bk-color);
+    position: relative;
+    height: 750px;
+}
+.who-i-am .title {
     background: white;
     color: var(--bk-color);
     background-clip: text;
@@ -82,6 +88,20 @@ body {
     background-clip: text;
     -webkit-text-fill-color: transparent;
     -webkit-text-stroke: 0px white;
+}
+
+.projects {
+    position: relative;
+    background-color: white;
+    z-index: 1;
+    height: 750px;
+}
+.projects .title {  
+    background: black;
+    color: rgb(232, 217, 192);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-stroke: 4px transparent;
 }
 
 .divider {
@@ -126,6 +146,10 @@ body {
     overflow: hidden;
     display: block;
     white-space: nowrap;
+}
+.inverse .tab-right, .inverse .tab-left {
+    color: rgb(234, 234, 234);
+    background-color: black;
 }
 .tab-left { float: left; text-align: right; border-top-right-radius: 10px; border-bottom-right-radius: 10px; }
 .tab-right { float: right; text-align: left; border-top-left-radius: 10px; border-bottom-left-radius: 10px; }
